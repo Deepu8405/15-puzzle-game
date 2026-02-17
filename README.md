@@ -2,7 +2,7 @@
 
 A classic sliding tile puzzle developed using vanilla web technologies. This project demonstrates logical implementation, state management in JavaScript, and responsive UI design.
 
-## 🚀 [Play the Live Demo](https://deepu8405.github.io/15puzzle.github.io/)
+## 🚀 [Play the Live Demo](https://deepu8405.github.io/15-puzzle-game/)
 
 ---
 
