@@ -4,6 +4,14 @@ var rows;
 var columns;
 var textMoves;
 var arrayForBoard;
+var timerInterval; // Global variable to track the interval
+
+function startTimer() {
+    clearInterval(timerInterval); // Reset any existing timer
+    time = 0;
+    document.getElementById("tim").innerHTML = time;
+    timerInterval = setInterval(utime, 1000);
+}
 
 function start()
 {
@@ -67,6 +75,7 @@ function startNewGame()
       count++;
     }
   }
+  startTimer();
   showTable();
   debug(); 
 }
@@ -96,6 +105,12 @@ function showTable()
 
 function moveThisTile( tableRow, tableColumn)
 {
+  if (checkIfWinner()) {
+    clearInterval(timerInterval); // Stop the clock!
+    alert("Congratulations! Solved in " + moves + " moves and " + time + " seconds.");
+    startNewGame();
+}
+
   if (checkIfMoveable(tableRow, tableColumn, "up") ||
       checkIfMoveable(tableRow, tableColumn, "down") ||
       checkIfMoveable(tableRow, tableColumn, "left") ||
